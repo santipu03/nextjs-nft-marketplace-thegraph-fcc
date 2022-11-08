@@ -1,17 +1,7 @@
-Home Page: 
- - Show recently listed NFTs
-    1. If you own the NFT, you can update the listing
-    2. If not, you can buy it
-
-Sell Page:
- - You can list an NFT in the marketplace
+Instead of Moralis:
+1. Index with TheGraph
+2. Read from TheGraph
     
-
-## IMPORTANT
- - This repo doesn't actually work bc it's based on a Moralis server that is no longer available for free users
-
-
-
 
 
 

@@ -1,1 +1,8 @@
-{"5":{"NftMarketplace":["0x844c42AcB3C5B1d4cF5aA265E1D7e5830e65A0D7"]},"31337":{"NftMarketplace":["0x5FbDB2315678afecb367f032d93F642f64180aa3"]}}
+{
+    "5":{
+        "NftMarketplace":["0x844c42AcB3C5B1d4cF5aA265E1D7e5830e65A0D7"]
+    },
+    "31337":{
+        "NftMarketplace":["0x5FbDB2315678afecb367f032d93F642f64180aa3"]
+    }
+}

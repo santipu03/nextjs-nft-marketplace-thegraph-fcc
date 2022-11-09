@@ -11,19 +11,19 @@ const truncateString = (fullStr, strLength) => {
     if (fullStr.length <= strLength) return fullStr
 
     const separator = "..."
-    let separatorLength = separator.length()
+    let separatorLength = separator.length
     const charsToShow = strLength - separatorLength
     const frontChars = Math.ceil(charsToShow / 2)
     const backChars = Math.floor(charsToShow / 2)
     return (
         fullStr.substring(0, frontChars) +
         separator +
-        fullStr.substring(fullStr.length() - backChars)
+        fullStr.substring(fullStr.length - backChars)
     )
 }
 
 export default function NFTBox({ price, nftAddress, tokenId, marketplaceAddress, seller }) {
-    const { isWeb3Enabled, account } = useMoralis
+    const { isWeb3Enabled, account } = useMoralis()
     const dispatch = useNotification()
 
     const [imageURI, setImageURI] = useState("")
@@ -121,6 +121,7 @@ export default function NFTBox({ price, nftAddress, tokenId, marketplaceAddress,
                                         src={imageURI}
                                         height="200"
                                         width="200"
+                                        alt="imageURI"
                                     ></Image>
                                     <div className="font-bold">
                                         {ethers.utils.formatUnits(price, "ether")} ETH

@@ -1,10 +1,15 @@
-Instead of Moralis:
-1. Index with TheGraph
-2. Read from TheGraph
-    
+# NextJs NFT Marketplace
 
+This project is a part of the Hardhat FreeCodeCamp video.
 
+_[ :movie_camera: FreeCodeCamp video](https://www.youtube.com/watch?v=gyMwXuJrbJQ&t)_
 
+If you want to know more about this project go to the FreeCodeCamp original repo
+
+_[ :classical_building: FreeCodeCamp original repo](https://github.com/PatrickAlphaC/nextjs-nft-marketplace-thegraph-fcc)_
+
+## Demo
+https://nextjs-nft-marketplace-thegraph-fcc.vercel.app/
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

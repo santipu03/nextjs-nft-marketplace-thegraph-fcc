@@ -9,9 +9,9 @@ import { useEffect, useState } from "react"
 
 export default function Home() {
     const dispatch = useNotification()
-    const { chainId, account, isWeb3Enabled } = useMoralis
+    const { chainId, account, isWeb3Enabled } = useMoralis()
     const chainString = chainId ? parseInt(chainId).toString() : "31337"
-    const marketplaceAddress = networkMapping[chainString]["NftMarketplace"][0]
+    const marketplaceAddress = networkMapping[chainString].NftMarketplace[0]
     const [proceeds, setProceeds] = useState("0")
 
     const { runContractFunction } = useWeb3Contract()
@@ -33,13 +33,14 @@ export default function Home() {
         }
         await runContractFunction({
             params: approveOptions,
-            onSuccess: () => handleApproveSuccess(nftAddress, tokenId, price),
+            onSuccess: (tx) => handleApproveSuccess(tx, nftAddress, tokenId, price),
             onError: (e) => console.log(e),
         })
     }
 
-    async function handleApproveSuccess(nftAddress, tokenId, price) {
+    async function handleApproveSuccess(tx, nftAddress, tokenId, price) {
         console.log("Time to list an item!")
+        await tx.wait(1)
         const listOptions = {
             abi: nftMarketplaceAbi,
             contractAddress: marketplaceAddress,
@@ -89,7 +90,7 @@ export default function Home() {
             onError: (e) => console.log(e),
         })
         if (returnedProceeds) {
-            setProceeds(returnedProceeds.toString())
+            setProceeds((returnedProceeds / 10 ** 18).toString())
         }
     }
 
@@ -128,7 +129,7 @@ export default function Home() {
                 title="Sell your NFT!"
                 id="Main Form"
             />
-            <div>Withdraw {proceeds} proceeds</div>
+            <div>Withdraw {proceeds} proceeds in ETH</div>
             {proceeds != "0" ? (
                 <Button
                     onClick={() => {

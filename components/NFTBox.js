@@ -116,13 +116,15 @@ export default function NFTBox({ price, nftAddress, tokenId, marketplaceAddress,
                                     <div className="italic text-sm">
                                         Owned by {formattedSellerAddress}
                                     </div>
-                                    <Image
-                                        loader={() => imageURI}
-                                        src={imageURI}
-                                        height="200"
-                                        width="200"
-                                        alt="imageURI"
-                                    ></Image>
+                                    <div className="flex items-center justify-center w-full">
+                                        <Image
+                                            loader={() => imageURI}
+                                            src={imageURI}
+                                            height="200"
+                                            width="200"
+                                            alt="imageURI"
+                                        ></Image>
+                                    </div>
                                     <div className="font-bold">
                                         {ethers.utils.formatUnits(price, "ether")} ETH
                                     </div>
